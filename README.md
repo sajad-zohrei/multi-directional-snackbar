@@ -1,5 +1,5 @@
 # multi-directinal-snackbar
-android snackbar support multi directinal
+android snackbar supports multi directins
 
 
 ## Features
