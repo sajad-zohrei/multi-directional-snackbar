@@ -6,9 +6,7 @@ android snackbar support multi directinal
 - Support multiDirection.
 
 ## Usage
-The multiDirectinalSnackbar is very easy to setup
-
-put sample code
+  -  The multiDirectinalSnackbar is very easy to setup
 
    ```java
     Snackbar snackbar = Snackbar.with(getApplicationContext())
@@ -25,9 +23,6 @@ put sample code
         snackbar.actionColor(<Your color>);
         SnackbarManager.show(snackbar, this, Snackbar.{ 'RTL' or 'LTR'});
     ```
-That's it!
-
-Direc
 
 ## Gradle
   -  Add the following to your project level `build.gradle`:
@@ -43,7 +38,7 @@ allprojects {
  
 ```gradle
 dependencies {
-	compile 'com.github.PhilJay:MPAndroidChart:v3.0.0-beta1'
+     compile 'com.github.sajad-zohrei:multi-directional-snackbar:1.1'
 }
 ```
 
