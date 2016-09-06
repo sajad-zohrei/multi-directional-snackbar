@@ -13,9 +13,9 @@ public class SnackbarManager {
     private SnackbarManager() {
     }
 
-    public static void show(@NonNull Snackbar snackbar,int lan) {
+    public static void show(@NonNull Snackbar snackbar,int direction) {
         try {
-            show(snackbar, (Activity) snackbar.getContext(),lan);
+            show(snackbar, (Activity) snackbar.getContext(),direction);
         } catch (ClassCastException e) {
             Log.e(TAG, "Couldn't get Activity from the Snackbar's Context. Try calling " +
                     "#show(Snackbar, Activity) instead", e);

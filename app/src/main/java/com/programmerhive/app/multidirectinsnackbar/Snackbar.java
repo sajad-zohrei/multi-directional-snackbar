@@ -47,9 +47,13 @@ public class Snackbar extends SnackbarLayout {
         }
     }
 
+    public static int RTL = 1;
+    public static int LTR = 0;
+
     private SnackbarType mType = SnackbarType.SINGLE_LINE;
     private SnackbarDuration mDuration = SnackbarDuration.LENGTH_LONG;
     private CharSequence mText;
+    private int mDirection = 0;
     private int mColor = -1;
     private int mTextColor = -1;
     private int mOffset;
@@ -102,6 +106,16 @@ public class Snackbar extends SnackbarLayout {
         mText = text;
         return this;
     }
+/*    *//**
+     * Sets the direction to be displayed in this {@link Snackbar}
+     *
+     * @param direction
+     * @return
+     *//*
+    public Snackbar direction(int direction) {
+        mDirection = direction;
+        return this;
+    }*/
 
     /**
      * Sets the text to be displayed in this {@link Snackbar}
@@ -311,17 +325,14 @@ public class Snackbar extends SnackbarLayout {
 //        return this;
 //    }
 
-    private FrameLayout.LayoutParams init(Activity parent,int lan) {
+    private FrameLayout.LayoutParams init(Activity parent, int lan) {
         SnackbarLayout layout;
-        if(lan==1)
-        {
-        	layout = (SnackbarLayout) LayoutInflater.from(parent)
-                    .inflate(R.layout.sb__template_fa, this, true);
-        }
-        else
-        {
-        	layout = (SnackbarLayout) LayoutInflater.from(parent)
-                    .inflate(R.layout.sb__template, this, true);
+        if (lan == 1) {
+            layout = (SnackbarLayout) LayoutInflater.from(parent)
+                    .inflate(R.layout.sb__template_rtl, this, true);
+        } else {
+            layout = (SnackbarLayout) LayoutInflater.from(parent)
+                    .inflate(R.layout.sb__template_ltr, this, true);
         }
         Resources res = getResources();
         mColor = mColor != -1 ? mColor : res.getColor(R.color.sb__background);
@@ -436,8 +447,8 @@ public class Snackbar extends SnackbarLayout {
      *
      * @param targetActivity
      */
-    public void show(Activity targetActivity,int lan) {
-        FrameLayout.LayoutParams params = init(targetActivity,lan);
+    public void show(Activity targetActivity, int direction) {
+        FrameLayout.LayoutParams params = init(targetActivity, direction);
 
         ViewGroup root = (ViewGroup) targetActivity.findViewById(android.R.id.content);
 
@@ -629,10 +640,7 @@ public class Snackbar extends SnackbarLayout {
         return mType;
     }
 
-    /**
-     * @return the pixel offset of this {@link com.nispok.snackbar.Snackbar} from the left and
-     * bottom of the {@link android.app.Activity}.
-     */
+
     public int getOffset() {
         return mOffset;
     }
@@ -645,24 +653,15 @@ public class Snackbar extends SnackbarLayout {
         return mShouldDismissOnActionClicked;
     }
 
-    /**
-     * @return true if this {@link com.nispok.snackbar.Snackbar} is currently showing
-     */
     public boolean isShowing() {
         return mIsShowing;
     }
 
-    /**
-     * @return false if this {@link com.nispok.snackbar.Snackbar} has been dismissed
-     */
+
     public boolean isDismissed() {
         return !mIsShowing;
     }
 
-    /**
-     * @return the animation resource used by this {@link com.nispok.snackbar.Snackbar} instance
-     * to enter the view
-     */
     @AnimRes
     public static int getInAnimationResource() {
         return R.anim.sb__in;
