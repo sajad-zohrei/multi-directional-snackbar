@@ -1,6 +1,8 @@
 # multi-directinal-snackbar
 android snackbar supports multi directins
 
+<img src="https://github.com/sajad-zohrei/multi-directional-snackbar/blob/master/screenshot/ltr.jpg" width="40%">
+<img src="https://github.com/sajad-zohrei/multi-directional-snackbar/blob/master/screenshot/rtl.jpg" width="40%">
 
 ## Features
 - Support multiDirection.
