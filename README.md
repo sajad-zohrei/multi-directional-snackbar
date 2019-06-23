@@ -10,7 +10,7 @@ android snackbar supports multi directins
 ## Usage
   -  The multiDirectinalSnackbar is very easy to setup
      ```java
-    	Snackbar snackbar = Snackbar.with(getApplicationContext())
+     Snackbar snackbar = Snackbar.with(getApplicationContext())
                 .duration(Snackbar.SnackbarDuration.LENGTH_INDEFINITE)
                 .text(<your text>)
                 .actionLabel(<your lable>)
@@ -21,8 +21,8 @@ android snackbar supports multi directins
                         //your action
                     }
                 });
-  	  snackbar.actionColor(<Your color>);
-    	SnackbarManager.show(snackbar, this, Snackbar.{ 'RTL' or 'LTR'});
+     snackbar.actionColor(<Your color>);
+     SnackbarManager.show(snackbar, this, Snackbar.{ 'RTL' or 'LTR'});
 		```
 
 	
