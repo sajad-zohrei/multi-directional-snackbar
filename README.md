@@ -24,12 +24,13 @@ android snackbar supports multi directins
                 });
         snackbar.actionColor(<Your color>);
         SnackbarManager.show(snackbar, this, Snackbar.{ 'RTL' or 'LTR'});
+	
     ```
 
 ## Gradle
   -  Add the following to your project level `build.gradle`:
- 
-```gradle
+```
+gradle
 allprojects {
 	repositories {
 		maven { url "https://jitpack.io" }
