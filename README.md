@@ -21,9 +21,9 @@ android snackbar supports multi directins
                         //your action
                     }
                 });
-        snackbar.actionColor(<Your color>);
-        SnackbarManager.show(snackbar, this, Snackbar.{ 'RTL' or 'LTR'});
-	```
+    snackbar.actionColor(<Your color>);
+    SnackbarManager.show(snackbar, this, Snackbar.{ 'RTL' or 'LTR'});
+	 ```
 
 	
 ## Gradle
